@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Aurum Hotel Booking System
 
-# Run and deploy your AI Studio app
+A modern, full-featured hotel booking web application built with React, Vite, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+**Live Demo:** [aurum-booking-system.vercel.app](https://aurum-booking-system.vercel.app)
 
-View your app in AI Studio: https://ai.studio/apps/4be5719e-6307-4602-94a9-04eda2c2f75a
+## Features
 
-## Run Locally
+- **Room Browsing & Details:** View available rooms, amenities, and pricing.
+- **Booking Flow:** Complete checkout process with guest details and payment form.
+- **Booking Management:** View past and upcoming bookings, receive booking receipts.
+- **Static Pages:** Check out extra hotel services like Dining, Spa, Meetings, and Offers.
+- **Database Integration:** Seamless integration with Supabase.
+- **AI Integration:** Includes `@google/genai` for smart features.
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+- **Frontend:** React 19, React Router v7, Tailwind CSS (v4)
+- **Tooling:** Vite, TypeScript
+- **Backend/BaaS:** Supabase
+- **UI & Animations:** Lucide React, Framer Motion
+- **Utilities:** date-fns, jsPDF, clsx, tailwind-merge
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Getting Started
+
+### Prerequisites
+
+- Node.js installed on your machine.
+
+### Installation
+
+1. Clone the repository and install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Environment Setup:
+   Create a `.env.local` file in the root directory and add your environment variables (e.g., Supabase keys, Gemini API key):
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   GEMINI_API_KEY=your_gemini_api_key
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+- `src/components/`: Reusable UI components (Navbar, Footer, Forms, Cards, etc.)
+- `src/pages/`: Page components for routing (Home, Checkout, Rooms, Spa, etc.)
+- `src/lib/`: Library integrations (e.g., Supabase client setup)
+- `src/data/`: Static data and content (e.g., Rooms)
+- `src/utils/`: Helper functions (availability, pricing, booking storage)
+- `api/`: Serverless functions (e.g., send-receipt)
