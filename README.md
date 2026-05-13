@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Aurum Hotel Booking System" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" width="100%" style="border-radius: 8px; margin-bottom: 20px;" />
+  <img alt="Aurum Hotel Booking System" src="hhttps://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=2000&quot" width="100%" style="border-radius: 8px; margin-bottom: 20px;" />
 </div>
 
 # Aurum Hotel Booking System
