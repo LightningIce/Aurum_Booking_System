@@ -1,3 +1,7 @@
+<div align="center">
+  <img alt="Aurum Hotel Booking System" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" width="100%" style="border-radius: 8px; margin-bottom: 20px;" />
+</div>
+
 # Aurum Hotel Booking System
 
 A modern, full-featured hotel booking web application built with React, Vite, and Tailwind CSS.
