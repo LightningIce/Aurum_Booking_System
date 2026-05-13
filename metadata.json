@@ -1,0 +1,6 @@
+{
+  "name": "Aurum Grand Hotel",
+  "description": "A luxury hotel room booking system prototype featuring elegant design, availability management, and simulated checkout flow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
