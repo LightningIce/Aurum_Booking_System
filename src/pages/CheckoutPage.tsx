@@ -312,8 +312,8 @@ export default function CheckoutPage() {
                 </div>
                 <p className="text-xs text-white/60 leading-relaxed uppercase tracking-widest">
                   {perksApplied 
-                    ? "Perks Applied! You will earn 4,800 Aurum Points." 
-                    : "Sign in to earn 4,800 Aurum Points on this reservation."}
+                    ? "Perks Applied! You will get 10% discount." 
+                    : "Apply Perks in to 10% discount on this reservation."}
                 </p>
 
                 {!perksApplied && (

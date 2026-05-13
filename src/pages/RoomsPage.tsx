@@ -66,30 +66,69 @@ export default function RoomsPage() {
   return (
     <div className="bg-slate-50 pb-24">
       {/* Search Summary Bar */}
-      <div className="bg-primary text-white py-6 px-6 md:px-12 sticky top-[72px] z-40 border-t border-white/5 border-b border-accent/20">
+      <div className="bg-primary text-white py-6 px-6 md:px-12 border-t border-white/5 border-b border-accent/20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-12 items-center text-center md:text-left">
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-white/50 block">Stay Dates</span>
-              <p className="text-sm font-serif">
-                {format(parseISO(checkin), 'MMM dd, yyyy')} — {format(parseISO(checkout), 'MMM dd, yyyy')}
-              </p>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center w-full">
+            <div className="flex-1 w-full">
+              <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-1">Check-in</label>
+              <input
+                type="date"
+                value={checkin}
+                min={format(new Date(), 'yyyy-MM-dd')}
+                onChange={(e) => {
+                  const newCheckin = e.target.value;
+                  const newParams = new URLSearchParams(searchParams);
+                  newParams.set('checkin', newCheckin);
+                  
+                  if (newCheckin >= checkout) {
+                    newParams.set('checkout', format(addDays(parseISO(newCheckin), 1), 'yyyy-MM-dd'));
+                  }
+                  
+                  setSearchParams(newParams);
+                }}
+                className="w-full bg-white/10 border border-white/20 text-white text-sm px-3 py-2 outline-none focus:border-accent"
+              />
             </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-white/50 block">Duration</span>
-              <p className="text-sm font-serif">{nights} {nights === 1 ? 'Night' : 'Nights'}</p>
+            <div className="flex-1 w-full">
+              <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-1">Check-out</label>
+              <input
+                type="date"
+                value={checkout}
+                min={format(addDays(parseISO(checkin), 1), 'yyyy-MM-dd')}
+                onChange={(e) => {
+                  const newCheckout = e.target.value;
+                  const newParams = new URLSearchParams(searchParams);
+                  newParams.set('checkout', newCheckout);
+                  
+                  if (newCheckout <= checkin) {
+                    newParams.set('checkin', format(addDays(parseISO(newCheckout), -1), 'yyyy-MM-dd'));
+                  }
+                  
+                  setSearchParams(newParams);
+                }}
+                className="w-full bg-white/10 border border-white/20 text-white text-sm px-3 py-2 outline-none focus:border-accent"
+              />
             </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-white/50 block">Capacity</span>
-              <p className="text-sm font-serif">{guests} {guests === 1 ? 'Guest' : 'Guests'}</p>
+            <div className="flex-1 w-full md:max-w-[150px]">
+              <label className="text-[10px] uppercase tracking-widest text-white/50 block mb-1">Guests</label>
+              <input
+                type="number"
+                min="1"
+                max="4"
+                value={guests}
+                onChange={(e) => {
+                  const newParams = new URLSearchParams(searchParams);
+                  newParams.set('guests', e.target.value);
+                  setSearchParams(newParams);
+                }}
+                className="w-full bg-white/10 border border-white/20 text-white text-sm px-3 py-2 outline-none focus:border-accent"
+              />
+            </div>
+            <div className="hidden md:block">
+              <span className="text-[10px] uppercase tracking-widest text-white/50 block mb-1">Duration</span>
+              <p className="text-sm font-serif p-2">{nights} {nights === 1 ? 'Night' : 'Nights'}</p>
             </div>
           </div>
-          <Link 
-            to="/" 
-            className="text-xs uppercase tracking-widest font-bold text-accent hover:text-white border-b border-accent/30 hover:border-white transition-all pb-1"
-          >
-            Modify Search
-          </Link>
         </div>
       </div>
 

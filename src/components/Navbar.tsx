@@ -12,7 +12,8 @@ export default function Navbar() {
       </Link>
       
       <div className="flex items-center gap-6 md:gap-10">
-        <Link to="/rooms" className="text-sm uppercase tracking-widest hover:text-accent transition-colors">Rooms</Link>
+        <Link to="/about" className="text-sm uppercase tracking-widest hover:text-accent transition-colors">About Us</Link>
+        <Link to="/offers" className="text-sm uppercase tracking-widest hover:text-accent transition-colors">Special Offers</Link>
         <Link to="/my-booking" className="text-sm uppercase tracking-widest hover:text-accent transition-colors">My Bookings</Link>
         <Link 
           to="/rooms" 
